@@ -17,7 +17,7 @@ public class ToDoControler {
     @Autowired
     ToDoService toDoService;
 
-    @RequestMapping(value = "/ToDo", method = RequestMethod.GET)
+    @RequestMapping(value = "/todo", method = RequestMethod.GET)
     public String showToDo(ModelMap modelMap) {
         String name = (String) modelMap.get("name");
     modelMap.put("todo",toDoService.getToDoForUser(name));

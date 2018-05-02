@@ -27,11 +27,14 @@ public class AddToDoControler {
 
 @RequestMapping(value = "/add", method = RequestMethod.POST)
 
+
     String addToDo(@RequestParam String toDoName,ModelMap modelMap) {
 
     toDoService.addToDoForUser((String) modelMap.get("name"),toDoName);
-    modelMap.put("todo", toDoService.getToDoForUser((String) modelMap.get("name")));
-    return "todo";
+    /*modelMap.put("todo", toDoService.getToDoForUser((String) modelMap.get("name")));
+    return "todo";*/
+    return "redirect:/todo";
+
 }
 
 

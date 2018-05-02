@@ -10,6 +10,10 @@
 
 
 <h1>To do for ${name}</h1>
+
+
+
+
 <br>
 <font color="green"> ${todo}</font>
 <br>
