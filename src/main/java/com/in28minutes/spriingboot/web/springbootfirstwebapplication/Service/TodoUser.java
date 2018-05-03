@@ -4,16 +4,21 @@ import java.util.Date;
 
 public class TodoUser {
 
-    String username;
-    String toDoName;
-    boolean finished;
-    Date targetDate;
+    static int countId=0;
+
+    private int id;
+    private String username;
+    private String toDoName;
+    private boolean finished;
+    private Date targetDate;
 
     public TodoUser(String username, String toDoName, boolean finished, Date targetDate) {
         this.username = username;
         this.toDoName = toDoName;
         this.finished = finished;
         this.targetDate = targetDate;
+        countId++;
+        this.id = countId;
     }
 
     public String getUsername() {
@@ -32,8 +37,12 @@ public class TodoUser {
         this.toDoName = toDoName;
     }
 
-    public boolean isFinished() {
+    public boolean getFinished() {
         return finished;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public void setFinished(boolean finished) {

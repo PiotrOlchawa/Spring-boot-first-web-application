@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 @Service
@@ -33,6 +34,14 @@ public class ToDoService {
 
     public void addToDoForUser(String userName,String toDoName) {
         todoUserList.add(new TodoUser(userName,toDoName,false,new Date()));
+    }
+
+    public void deleteToDoForUser(int id){
+        Iterator<TodoUser> iteratorTodoUser = todoUserList.iterator();
+        while(iteratorTodoUser.hasNext()){
+            if(iteratorTodoUser.next().getId() == id) iteratorTodoUser.remove();
+        }
+
     }
 
 }

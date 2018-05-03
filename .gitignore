@@ -26,3 +26,9 @@ hs_err_pid*
 
 .idea
 *.iml
+.mvn/
+mvnw
+mvnw.cmd
+pom.xml
+src/
+target/
