@@ -1,0 +1,5 @@
+Add toDo
+
+--view-->/todo.html   ----- Action update GET----> controler ---> /update -> getting id form view model -> Obtain todo object for id and put into new model -----> viev ---> /update.html
+--view--> /update.html obtain from the model id(hidden) an toDo and create own model   -----POST----->    (error validation) /update
+                                                                                       -----POST----->  get todo from model an update

@@ -45,19 +45,21 @@ public class ToDoService {
 
     }
 
-    public void updatetoDoForUser(int id,String toDo) {
+    public void updatetoDoForUser(TodoUser todoUser) {
 
-        for (TodoUser toDoUser : todoUserList) {
+        for (TodoUser toDoUsers : todoUserList) {
 
-            if (toDoUser.getId() == id ) {
-                toDoUser.setToDoName(toDo);
-                toDoUser.setTargetDate(new Date());
+            if (toDoUsers.getId() == todoUser.getId()) {
+                toDoUsers.setToDoName(todoUser.getToDoName());
+                toDoUsers.setFinished(todoUser.getFinished());
+                toDoUsers.setTargetDate(new Date());
             }
         }
 
 
 
     }
+
 
     public void addToDoForUser(String userName,String toDoName) {
         todoUserList.add(new TodoUser(userName,toDoName,false,new Date()));

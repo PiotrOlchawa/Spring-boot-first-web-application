@@ -22,7 +22,7 @@ public class AddToDoControler {
 
 @RequestMapping(value = "/add", method = RequestMethod.GET)
 
-    String sendToAddToDo(TodoUser todoUser){
+    String viewAddToDo(TodoUser todoUser){
     return "add";
     }
 
