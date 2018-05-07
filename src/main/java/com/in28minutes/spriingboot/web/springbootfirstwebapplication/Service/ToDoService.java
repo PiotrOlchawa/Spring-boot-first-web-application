@@ -32,6 +32,33 @@ public class ToDoService {
 
     }
 
+    public TodoUser toDoForUser(int id) {
+
+        for (TodoUser toDoUser : todoUserList) {
+
+            if (toDoUser.getId() == id ) {
+                return toDoUser;
+            }
+        }
+        return null;
+
+
+    }
+
+    public void updatetoDoForUser(int id,String toDo) {
+
+        for (TodoUser toDoUser : todoUserList) {
+
+            if (toDoUser.getId() == id ) {
+                toDoUser.setToDoName(toDo);
+                toDoUser.setTargetDate(new Date());
+            }
+        }
+
+
+
+    }
+
     public void addToDoForUser(String userName,String toDoName) {
         todoUserList.add(new TodoUser(userName,toDoName,false,new Date()));
     }
@@ -43,5 +70,8 @@ public class ToDoService {
         }
 
     }
+
+
+
 
 }
