@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<HEAD>
+
+    <title>
+        Welcome ${name}
+    </title>
+
+</HEAD>
+<body>
+
+<h1 th:text="'Welcome '+ ${name}">Welcome</h1>
+Click here to show your ToDo <a href="/todo">ToDo List</a>
+
+</body>
+
+
+</html>

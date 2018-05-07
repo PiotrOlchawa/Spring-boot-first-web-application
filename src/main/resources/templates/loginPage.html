@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <link rel="stylesheet" href="/webjars/bootstrap/4.1.0/css/bootstrap.css">
+    <title>Login Page</title>
+
+</head>
+
+<body>
+
+<div class="container">
+<br>
+    <p align="center" class="text-danger" th:text="${errorMessage}"></p>
+
+    <table align="center" class="table-sm">
+        <tr></tr>
+        <form method="POST">
+            <tr><td>Username </td><td> <input type="text" name="name"></td></tr>
+            <tr><td>Password </td><td><input type="password" name="password"></td></tr>
+            <tr><td colspan="2" align="center"><input text="Login" type="submit" value="Login"></td></tr>
+
+        </form>
+
+    </table>
+
+
+
+
+    <script src="/webjars/jquery/3.1.1/jquery.js"></script>
+    <script src="/webjars/popper.js/1.14.1/umd/popper.js"></script>
+    <script src="/webjars/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+</div>
+</body>
+
+
+</html>

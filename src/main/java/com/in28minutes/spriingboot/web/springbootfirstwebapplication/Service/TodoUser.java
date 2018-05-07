@@ -1,16 +1,27 @@
 package com.in28minutes.spriingboot.web.springbootfirstwebapplication.Service;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 public class TodoUser {
 
-    static int countId=0;
+    static int countId = 0;
+
 
     private int id;
     private String username;
-    private String toDoName;
+
     private boolean finished;
     private Date targetDate;
+
+
+    @Size(min = 10,message = "Pole powinno zawierać minimum 10 znaków")
+    private String toDoName;
+
+    public TodoUser() {
+        super();
+    }
 
     public TodoUser(String username, String toDoName, boolean finished, Date targetDate) {
         this.username = username;
@@ -41,12 +52,16 @@ public class TodoUser {
         return finished;
     }
 
+    public void setFinished(boolean finished) {
+        this.finished = finished;
+    }
+
     public int getId() {
         return id;
     }
 
-    public void setFinished(boolean finished) {
-        this.finished = finished;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Date getTargetDate() {

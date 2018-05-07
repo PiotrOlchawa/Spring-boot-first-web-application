@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <link rel="stylesheet" href="/webjars/bootstrap/4.1.0/css/bootstrap.css">
+
+
+<title>ToDO Page</title>
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+<h1 align="center" class="h1" th:text="'ToDo for ' + ${name}"></h1>
+<br>
+
+<!--<br>
+<font color="green" th:text="${todo}"> ${todo}</font>
+<br>-->
+
+<table class="table table-striped">
+    <tr>
+        <th>Username</th>
+        <th>ToDo Name</th>
+        <th>Finished ?</th>
+        <th>Start Entry Date</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <th:block th:each="todos : ${todo}">
+        <tr>
+            <td th:text="${todos.Username}"></td>
+            <td th:text="${todos.ToDoName}"></td>
+            <td th:text="${todos.Finished}"></td>
+            <td th:text="${todos.TargetDate}"></td>
+            <td><a class="btn btn-dark" th:text="'Update'" th:href="'/update?id='+${todos.Id}"></a></td>
+            <td><a class="btn btn-warning" th:text="'Delete'" th:href="'/delete?id='+${todos.Id}"></a></td>
+        </tr>
+
+
+    </th:block>
+</table>
+
+<br>
+<!--    <button type="button" class="btn btn-primary">Primary</button>
+<a class="btn-block" href="/add">Add new ToDo</a>-->
+
+ <form method="get" action="/add">
+        <button class="btn btn-primary" type="submit">Dodaj nowe ToDo</button>
+    </form>
+
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="/webjars/jquery/3.1.1/jquery.js"></script>
+<script src="/webjars/popper.js/1.14.1/umd/popper.js"></script>
+<script src="/webjars/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+<!--
+<script src="webjars/jquery/3.1.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/4.1.0/js/bootstrap.min.js"></script>-->
+
+</div>
+</body>
+
+
+</html>
