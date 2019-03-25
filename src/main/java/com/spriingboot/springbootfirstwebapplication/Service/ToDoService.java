@@ -1,4 +1,4 @@
-package com.in28minutes.spriingboot.web.springbootfirstwebapplication.Service;
+package com.spriingboot.springbootfirstwebapplication.Service;
 
 import org.springframework.stereotype.Service;
 
@@ -28,52 +28,39 @@ public class ToDoService {
             }
         }
         return selectedTodoUserList;
-
-
     }
 
     public TodoUser toDoForUser(int id) {
 
         for (TodoUser toDoUser : todoUserList) {
 
-            if (toDoUser.getId() == id ) {
+            if (toDoUser.getId() == id) {
                 return toDoUser;
             }
         }
         return null;
-
-
     }
 
     public void updatetoDoForUser(TodoUser todoUser) {
-
         for (TodoUser toDoUsers : todoUserList) {
 
             if (toDoUsers.getId() == todoUser.getId()) {
                 toDoUsers.setToDoName(todoUser.getToDoName());
                 toDoUsers.setFinished(todoUser.getFinished());
-                toDoUsers.setTargetDate(new Date());
+                toDoUsers.setTargetDate(todoUser.getTargetDate());
             }
         }
-
-
-
     }
 
 
-    public void addToDoForUser(String userName,String toDoName) {
-        todoUserList.add(new TodoUser(userName,toDoName,false,new Date()));
+    public void addToDoForUser(String userName, String toDoName, Date date) {
+        todoUserList.add(new TodoUser(userName, toDoName, false, date));
     }
 
-    public void deleteToDoForUser(int id){
+    public void deleteToDoForUser(int id) {
         Iterator<TodoUser> iteratorTodoUser = todoUserList.iterator();
-        while(iteratorTodoUser.hasNext()){
-            if(iteratorTodoUser.next().getId() == id) iteratorTodoUser.remove();
+        while (iteratorTodoUser.hasNext()) {
+            if (iteratorTodoUser.next().getId() == id) iteratorTodoUser.remove();
         }
-
     }
-
-
-
-
 }

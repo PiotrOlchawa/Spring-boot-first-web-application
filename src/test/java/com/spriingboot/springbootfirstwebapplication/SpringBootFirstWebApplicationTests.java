@@ -1,4 +1,4 @@
-package com.in28minutes.spriingboot.web.springbootfirstwebapplication;
+package com.spriingboot.springbootfirstwebapplication;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

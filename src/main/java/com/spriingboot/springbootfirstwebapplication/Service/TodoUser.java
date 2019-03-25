@@ -1,20 +1,26 @@
-package com.in28minutes.spriingboot.web.springbootfirstwebapplication.Service;
+package com.spriingboot.springbootfirstwebapplication.Service;
 
-import javax.validation.constraints.NotNull;
+
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.validation.constraints.Size;
+
 import java.util.Date;
+
+import static java.util.Calendar.DATE;
 
 public class TodoUser {
 
     static int countId = 0;
 
-
     private int id;
     private String username;
 
     private boolean finished;
-    private Date targetDate;
 
+    @DateTimeFormat(pattern="dd/MM/yy")
+    private Date targetDate;
 
     @Size(min = 10,message = "Pole powinno zawierać minimum 10 znaków")
     private String toDoName;

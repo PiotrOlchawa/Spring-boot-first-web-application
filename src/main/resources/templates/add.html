@@ -5,42 +5,32 @@
 <head>
 
     <link rel="stylesheet" href="/webjars/bootstrap/4.1.0/css/bootstrap.css">
-
     <title>
-
-    Update TODO
-
-</title>
-
+        Add TODO
+    </title>
 
 </head>
-
 <body>
-
 <div class="container">
-
-<h1 class="text-center">Wpisz nazwe nowego TODO</h1>
-
-<br>
-
-<form method="post" th:object="${todoUser}" th:action="@{/add}">
-    <fieldset class="form-group">
-    <input type="text"  class="form-control" th:field="*{toDoName}" />
-        <p class="text-warning" th:if="${#fields.hasErrors('toDoName')}" th:errors="*{toDoName}">ToDo is enpty</p>
-    </fieldset>
-    <button type="submit" name="Dodaj" class="btn btn-success">Dodaj</button>
-
-</form>
-
-
-<script src="/webjars/jquery/3.1.1/jquery.js"></script>
-<script src="/webjars/popper.js/1.14.1/umd/popper.js"></script>
-<script src="/webjars/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-
-
+    <h1 class="text-center"> Add new ToDo</h1>
+    <br>
+    <form method="post" th:object="${todoUser}" th:action="@{/add}">
+        <fieldset class="form-group">
+            ToDo Name
+            <input class="form-control" th:field="*{toDoName}"/>
+            <p class="text-warning" th:if="${#fields.hasErrors('toDoName')}" th:errors="*{toDoName}">ToDo is enpty</p>
+        </fieldset>
+        <fieldset class="form-group">
+            ToDo Date in format dd/mm/yy
+            <input class="form-control" th:field="*{targetDate}"/>
+            <p class="text-warning" th:if="${#fields.hasErrors('targetDate')}" th:errors="*{targetDate}">ToDo is
+                enpty</p>
+        </fieldset>
+        <button type="submit" name="Dodaj" class="btn btn-success">Dodaj</button>
+    </form>
+    <script src="/webjars/jquery/3.1.1/jquery.js"></script>
+    <script src="/webjars/popper.js/1.14.1/umd/popper.js"></script>
+    <script src="/webjars/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 </div>
 </body>
-
-
-
 </html>

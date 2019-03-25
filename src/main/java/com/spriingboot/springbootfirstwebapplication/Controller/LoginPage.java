@@ -1,6 +1,6 @@
-package com.in28minutes.spriingboot.web.springbootfirstwebapplication.Controller;
+package com.spriingboot.springbootfirstwebapplication.Controller;
 
-import com.in28minutes.spriingboot.web.springbootfirstwebapplication.Service.LoginValidator;
+import com.spriingboot.springbootfirstwebapplication.Service.LoginValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -17,13 +17,10 @@ public class LoginPage {
     @Autowired
     LoginValidator loginValidator;
 
-
     @RequestMapping(value = "/loginPage", method = RequestMethod.GET)
-
     public String handleLoginGet() {
         return "loginPage";
     }
-
 
     @RequestMapping(value = "/loginPage", method = RequestMethod.POST)
     public String handleLogin(@RequestParam String name, @RequestParam String password, ModelMap modelMap) {
@@ -31,16 +28,9 @@ public class LoginPage {
         if (!loginValidator.hardValidate(name, password)) {
             modelMap.put("errorMessage", "Bad login cerdinentals !");
             return "loginPage";
-
-
         }
-
         modelMap.put("name", name);
         modelMap.put("password", password);
         return "welcome";
-
     }
-
-
-
 }
